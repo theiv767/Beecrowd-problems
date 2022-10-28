@@ -38,8 +38,8 @@ public class Main {
                     if(commands.isEmpty() || currentPriority>priority){
                         priority = currentPriority;
                         commands.push(i);
-                    }else { // DANDO ERRO -----------------------------------------------------------------------------
-
+                        
+                    }else {
                         while(!commands.isEmpty() && !(currentPriority>priority)){
                             result+= commands.pop();
                             if(!commands.isEmpty()){
@@ -51,9 +51,9 @@ public class Main {
                         }
                         commands.push(i);
                         priority=currentPriority;
-
-                    } //-----------------------------------------------------------------------------------------------
+                    } 
                     break;
+                    
                 case ")":
                     while (!commands.isEmpty()&& !commands.peek().equals("(")){
                         result+= commands.pop();
@@ -65,6 +65,7 @@ public class Main {
                         priority = newPriority(commands.peek());
                     }
                     break;
+                    
                 case "(":
                     priority= -1;
                     commands.push(i);
